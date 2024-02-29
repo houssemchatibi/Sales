@@ -1,0 +1,31 @@
+.b{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg-dark{
+	background-color: #75767B;
+}
+
+
+.mt-50{
+	margin-top: 50px;
+}
+#canvas{
+    border: 2px solid black;
+}
+html body {
+    background: rgb(252,207,252);
+    background: linear-gradient(90deg, rgba(252,207,252,0.9752275910364145) 0%, rgba(160,185,233,1) 18%, rgba(35,65,193,1) 100%);
+} 
+.cartee
+{
+width:30%;
+background-color: rgb(235, 235, 235);
+border-radius: 2em;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+float:left;
+margin:1%;
+border:#ccc 1px solid;
+}

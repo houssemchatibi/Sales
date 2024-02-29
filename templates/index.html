@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block body %}
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="card mt-50" style="width: 100%; height: 100% ;margin-bottom:3%";>  
+                <div class="card-header" style="text-align: center">
+                    <h1>User Management </h1>
+                </div>
+  <div class="row" style="margin-top:3%;margin-bottom:3%;margin-left:3%;margin-right:3%">
+    
+    <div class="col-md-4">
+      
+      
+        {% include 'includes/messages.html' %}
+        
+      
+      <div class="card card-body">
+        <div  style="text-align: center">
+            <h3> Add User</h3>
+        </div>
+       <div class="row">
+       
+    </div> 
+        
+        <form action="{{url_for('add_user')}}" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <select name="role" class="form-control" class="selectpicker">
+                <option selected disabled>role</option>
+                <option>Admin</option>
+                <option>User</option>
+              </select>
+          </div>
+          
+          <button class="btn btn-primary btn-block">
+            Save 
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+          <tr>
+            
+            <td id="name">name</td>
+            <td id="email">email</td>
+            <td id="role">role</td>
+            <td id="r">Action</td>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in sales %}
+          <tr>
+            
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.role}}</td>
+            
+            <td width="130">
+              <a href="/edit/{{data.id}}" class="btn btn-secondary btn-sm">edit</a>
+              <a href="/delete/{{data.id}}" class="btn btn-danger btn-delete btn-sm">delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+{% endblock %}
+

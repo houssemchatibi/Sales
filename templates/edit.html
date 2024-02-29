@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+ 
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/update/{{sales.id}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" value="{{sales.name}}" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" name="email" value="{{sales.email}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <select name="role" value="{{sales.role}}" class="form-control" class="selectpicker">
+                <option selected disabled>role</option>
+                <option>Admin</option>
+                <option>User</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+{% endblock %}
